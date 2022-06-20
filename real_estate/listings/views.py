@@ -38,7 +38,7 @@ class ListingsCreateView(CreateView):
 # def listing_create(request):
 #     form = ListingForm()
 #     if request.method == 'POST':
-#         form = ListingForm(request.POST)
+#         form = ListingForm(request.POST,files=request.FILES)
 #         if form.is_valid():
 #             form.save()
 #             return reverse('listings:listing_list')
@@ -52,11 +52,11 @@ class ListingUpdateView(UpdateView):
     template_name = "listings/listing_update.html"
     form_class = ListingsForm
 
-# def listing_create(request,pk):
+# def listing_update(request,pk):
 #     listing = Listings.objects.get(id=pk)
 #     form = ListingForm(instace=listing)
 #     if request.method == 'POST':
-#         form = ListingForm(request.POST,instace=listing)
+#         form = ListingForm(request.POST,instace=listing,files=request.FILES)
 #         if form.is_valid():
 #             form.save()
 #             return reverse('listings:listing_list')
